@@ -9,7 +9,7 @@ function App() {
             <Header />
             <Switch>
                 <Route exact path="/" render={() => <Landing />} />
-                <Route path="/profile/:id" render={() => <Profile />} />
+                <Route path="/profile/:id" render={(props) => <Profile {...props} />} />
             </Switch>
         </BrowserRouter>
     );

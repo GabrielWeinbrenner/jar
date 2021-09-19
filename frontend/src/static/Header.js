@@ -69,10 +69,11 @@ const Header = (props) => {
                             className={classes.logo}
                             color="inherit"
                             aria-label="menu"
-                        ></IconButton>
+                        >
+                            🥤
+                        </IconButton>
                         <Typography variant="h5" className={classes.heading}>
-                            {" "}
-                            JAR
+                            Jar
                         </Typography>
                         <Tabs
                             className={classes.tabContainer}
