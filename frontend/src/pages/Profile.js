@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import CommunityItem from "../components/CommunityItem";
 
-import { Typography, Grid, Button, ButtonBase } from "@material-ui/core";
+import { Typography, Grid, Button, ButtonBase, Box } from "@material-ui/core";
 export default function Profile(props) {
     const profileId = props.match.params.id;
     const [profile, setProfile] = useState({});
@@ -14,8 +15,19 @@ export default function Profile(props) {
     //});
 
     return (
-        <Grid container direction="row" spacing={2}>
-            <Grid item xs={3} direction="column" container>
+        <Grid
+            container
+            direction="row"
+            spacing={2}
+            justifyContent="space-evenly"
+        >
+            <Grid
+                item
+                xs={3}
+                direction="column"
+                container
+                style={{ marginLeft: "1em" }}
+            >
                 <Grid item>
                     <ButtonBase sx={{ width: 160, height: 160 }}>
                         <img
@@ -27,7 +39,9 @@ export default function Profile(props) {
                     </ButtonBase>
                 </Grid>
                 <Grid item>
-                    <Typography variant="h4">John Smith</Typography>
+                    <Typography variant="h4">
+                        <Box fontWeight="fontWeightBold">John Smith</Box>
+                    </Typography>
                 </Grid>
                 <Grid item>
                     <Typography variant="subtitle2">
@@ -43,12 +57,22 @@ export default function Profile(props) {
                     </Typography>
                 </Grid>
             </Grid>
-            <Grid item xs={6} direction="column" container>
+            <Grid item xs={7} direction="column" container>
                 <Grid item>
-                    <Typography variant="h4">Communities joined</Typography>
+                    <Typography style={{ marginLeft: "1em" }} variant="h4">
+                        <Box fontWeight="fontWeightBold">
+                            Communities Joined
+                        </Box>
+                    </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography variant="h2">Hello</Typography>
+                    <CommunityItem />
+                </Grid>
+                <Grid item>
+                    <CommunityItem />
+                </Grid>
+                <Grid item>
+                    <CommunityItem />
                 </Grid>
             </Grid>
         </Grid>

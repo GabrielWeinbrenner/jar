@@ -33,13 +33,14 @@ const useStyles = makeStyles((theme) => ({
     },
     appBar: {
         // zIndex: theme.zIndex.modal + 1,
-        background: "#84563C",
+        background: "#40a6ff80",
         borderRadius: "0.5em",
         boxShadow: "none",
         alignItems: "center",
     },
     heading: {
         marginRight: "2em",
+        color: "black",
     },
 }));
 
@@ -85,6 +86,13 @@ const Header = (props) => {
                                 label="View"
                                 value="0"
                                 index={0}
+                            />
+                            <Tab
+                                component={Link}
+                                to="/profile/101"
+                                label="My Profile"
+                                value="1"
+                                index={1}
                             />
                         </Tabs>
                     </Toolbar>
