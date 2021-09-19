@@ -1,7 +1,7 @@
 var express = require("express"),
     app = express(),
     bodyParser = require("body-parser");
-var milkRoutes = require("./routes/milk");
+var communitiesroutes = require("./routes/communities");
 var profileRoutes = require("./routes/profile");
 var cors = require("cors");
 app.use(cors());
@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", function (req, res) {
     res.send("loaded");
 });
-app.use("/milk", milkRoutes);
+app.use("/milk", communitiesroutes);
 
 app.use("/profile", profileRoutes);
 

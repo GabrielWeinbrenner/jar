@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
 require("dotenv").config();
-const Milk = require("../models/milk.js");
-var blend_colors = import("../utils/blend.js");
+// Import mysql for node
 router.get("/", async function (req, res) {
+    /* Getting all the communites */
     try {
         const milks = await Milk.find({});
         res.send(milks);
@@ -12,6 +12,7 @@ router.get("/", async function (req, res) {
     }
 });
 router.get("/:name", async function (req, res) {
+    // Get specific community name
     try {
         const milk = await Milk.findOne(
             { name: req.params.name },
@@ -27,6 +28,7 @@ router.get("/:name", async function (req, res) {
 });
 
 router.post("/", async function (req, res) {
+    // Post a new community onto the sql database
     const milk = new Milk(req.body);
     try {
         await milk.save();
@@ -34,13 +36,6 @@ router.post("/", async function (req, res) {
     } catch (e) {
         res.status(400).send(e);
     }
-});
-
-router.post("/splice", function (req, res) {
-    var milkOne = req.params.one;
-    var milkTwo = req.params.two;
-    var finalColor = blend_colors(milkOne.color, milkTwo.color);
-    console.log(finalColor);
 });
 
 module.exports = router;
