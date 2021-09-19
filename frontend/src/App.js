@@ -3,6 +3,8 @@ import Header from "./static/Header.js";
 import Profile from "./pages/Profile.js";
 import Landing from "./pages/Landing.js";
 import Community from "./pages/Community.js";
+import CommunityForm from "./pages/CommunityForm.js";
+import ProfileForm from "./pages/ProfileForm.js";
 
 function App() {
     return (
@@ -17,6 +19,14 @@ function App() {
                 <Route
                     path="/profile/:id"
                     render={(props) => <Profile {...props} />}
+                />
+                <Route
+                    path="/communityform"
+                    render={(props) => <CommunityForm {...props} />}
+                />
+                <Route
+                    path="/profileform"
+                    render={(props) => <ProfileForm {...props} />}
                 />
             </Switch>
         </BrowserRouter>

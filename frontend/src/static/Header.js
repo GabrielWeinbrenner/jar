@@ -94,6 +94,20 @@ const Header = (props) => {
                                 value="1"
                                 index={1}
                             />
+                            <Tab
+                                component={Link}
+                                to="/communityform"
+                                label="Create Community"
+                                value="1"
+                                index={2}
+                            />
+                            <Tab
+                                component={Link}
+                                to="/profileform"
+                                label="Create Profile"
+                                value="1"
+                                index={3}
+                            />
                         </Tabs>
                     </Toolbar>
                 </AppBar>

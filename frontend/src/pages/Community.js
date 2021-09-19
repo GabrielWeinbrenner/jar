@@ -10,6 +10,8 @@ import {
     Tabs,
     Tab,
 } from "@material-ui/core";
+import IdeaItem from "../components/IdeaItem";
+import ProfileItem from "../components/ProfileItem";
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -120,13 +122,59 @@ export default function Profile(props) {
                         </Tabs>
                     </Box>
                     <TabPanel value={value} index={0}>
-                        Recent Contributions
+                        <Grid
+                            container
+                            direction="column"
+                            justify="space-between"
+                        >
+                            <Grid item>
+                                <Typography variant="h5">
+                                    Recent Contributions
+                                </Typography>
+                            </Grid>
+                            <Grid item style={{ marginTop: "2em" }}>
+                                <IdeaItem />
+                            </Grid>
+                        </Grid>
                     </TabPanel>
                     <TabPanel value={value} index={1}>
-                        Ideas
+                        <Grid
+                            container
+                            direction="column"
+                            justify="space-between"
+                        >
+                            <Grid item>
+                                <Typography variant="h5">Ideas</Typography>
+                            </Grid>
+                            <Grid item style={{ marginTop: "2em" }}>
+                                <IdeaItem />
+                                <IdeaItem />
+                                <IdeaItem />
+                                <IdeaItem />
+                            </Grid>
+                        </Grid>
                     </TabPanel>
                     <TabPanel value={value} index={2}>
-                        Members
+                        <Grid item>
+                            <Typography variant="h5">Members</Typography>
+                        </Grid>
+                        <Grid container direction="row" alignItems="center">
+                            <Grid item style={{ marginTop: "2em" }}>
+                                <ProfileItem />
+                            </Grid>
+                            <Grid item>
+                                <ProfileItem />
+                            </Grid>
+                            <Grid item>
+                                <ProfileItem />
+                            </Grid>
+                            <Grid item>
+                                <ProfileItem />
+                            </Grid>
+                            <Grid item>
+                                <ProfileItem />
+                            </Grid>
+                        </Grid>
                     </TabPanel>
                 </Box>
             </Grid>
